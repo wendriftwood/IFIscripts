@@ -69,7 +69,8 @@ if args.s:
     print ('You have chosen to burn in subtitles. This will take a long time. A better approach may be to make a clean transcode to a high quality format such as PRORES and make further clean or subtitled surrogates from that new copy. ')
     print ('***********************************************')
     time.sleep(1)
-lut_path = os.path.join(os.path.abspath(os.path.dirname(sys.argv[0])), '26_XYZ-22_Rec709.cube')
+# This 33-point LUT maps DCDM XYZ colour space to BT.709 RGB colour space with a chromatic adaptation from P3 DCI white point to D65 white point.
+lut_path = os.path.join(os.path.abspath(os.path.dirname(sys.argv[0])), 'DCDM_TO_BT.709_2.2.cube')
 # Set a bunch of variables for filenaming.    
 dcp_dir               = args.input
 # This temp directory should work on all operating systems. 
